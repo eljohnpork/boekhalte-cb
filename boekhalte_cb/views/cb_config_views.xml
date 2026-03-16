@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- CB Config Form View -->
     <record id="view_cb_config_form" model="ir.ui.view">
         <field name="name">cb.config.form</field>
         <field name="model">cb.config</field>
@@ -15,20 +14,16 @@
                             type="object" class="btn-secondary"/>
                 </header>
                 <sheet>
-                    <widget name="web_ribbon" title="Archief" bg_color="bg-danger"
-                            attrs="{'invisible': [('active', '=', True)]}"/>
                     <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="Naam configuratie"/>
-                        </h1>
+                        <h1><field name="name" placeholder="Naam configuratie"/></h1>
                     </div>
 
                     <group>
-                        <group string="Status">
-                            <field name="active"/>
+                        <group string="Sync Status">
                             <field name="last_catalog_sync"/>
                             <field name="last_stock_sync"/>
-                            <field name="last_price_sync"/>
+                            <field name="last_order_sync"/>
+                            <field name="last_invoice_sync"/>
                         </group>
                         <group string="Laatste Sync Resultaten">
                             <field name="last_sync_created"/>
@@ -46,17 +41,33 @@
                                     <field name="ftp_user"/>
                                     <field name="ftp_password" password="True"/>
                                     <field name="ftp_use_tls"/>
-                                </group>
-                                <group string="Bestandspaden op FTP">
-                                    <field name="ftp_catalog_path"/>
-                                    <field name="ftp_stock_path"/>
-                                    <field name="ftp_price_path"/>
+                                    <field name="ftp_base_path"/>
                                 </group>
                             </group>
-                            <group string="Bestandsformaat">
-                                <field name="file_format"/>
-                                <field name="catalog_filename_pattern"/>
-                                <field name="stock_filename_pattern"/>
+                        </page>
+
+                        <page string="Actieve Feeds" name="feeds">
+                            <group>
+                                <group string="Catalogus (ONIX)">
+                                    <field name="enable_onix3mcb"/>
+                                    <field name="enable_onix3mchb"/>
+                                    <field name="enable_onix3meb"/>
+                                </group>
+                                <group string="Beschikbaarheid">
+                                    <field name="enable_bhdart"/>
+                                    <field name="enable_abiafn"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Orders">
+                                    <field name="enable_uitopd"/>
+                                    <field name="enable_nuitop"/>
+                                    <field name="enable_opnopa"/>
+                                </group>
+                                <group string="Financieel">
+                                    <field name="enable_dvfacbubl"/>
+                                    <field name="enable_dvfacbpdf"/>
+                                </group>
                             </group>
                         </page>
 
@@ -68,12 +79,9 @@
                                     <field name="create_missing_categories"/>
                                     <field name="update_existing_products"/>
                                     <field name="import_cover_images"/>
-                                    <field name="archive_missing_products"/>
                                 </group>
                                 <group string="Voorraad">
-                                    <field name="sync_stock"/>
                                     <field name="stock_location_id"/>
-                                    <field name="leadtime_field"/>
                                 </group>
                             </group>
                         </page>
@@ -83,7 +91,6 @@
         </field>
     </record>
 
-    <!-- CB Config Tree View -->
     <record id="view_cb_config_tree" model="ir.ui.view">
         <field name="name">cb.config.tree</field>
         <field name="model">cb.config</field>
@@ -101,14 +108,12 @@
         </field>
     </record>
 
-    <!-- Action -->
     <record id="action_cb_config" model="ir.actions.act_window">
         <field name="name">CB Configuratie</field>
         <field name="res_model">cb.config</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- NUR Codes view -->
     <record id="view_cb_nur_code_tree" model="ir.ui.view">
         <field name="name">cb.nur.code.tree</field>
         <field name="model">cb.nur.code</field>
@@ -127,11 +132,9 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Menu -->
     <menuitem id="menu_cb_root"
               name="De Boekhalte CB"
-              sequence="90"
-              web_icon="boekhalte_cb,static/description/icon.png"/>
+              sequence="90"/>
 
     <menuitem id="menu_cb_sync"
               name="Synchronisatie"
