@@ -33,9 +33,9 @@
     <!-- Lifestyle -->
     <record id="nur_440" model="cb.nur.code"><field name="code">440</field><field name="name">Kookboeken</field></record>
     <record id="nur_450_sport" model="cb.nur.code"><field name="code">481</field><field name="name">Sport</field></record>
-    <record id="nur_450_reizen" model="cb.nur.code"><field name="code">500</field><field name="name">Reizen</field></record>
-    <record id="nur_450_kunst" model="cb.nur.code"><field name="code">640</field><field name="name">Kunst en cultuur</field></record>
-    <record id="nur_450_muziek" model="cb.nur.code"><field name="code">663</field><field name="name">Muziek</field></record>
+    <record id="nur_reizen" model="cb.nur.code"><field name="code">510</field><field name="name">Reizen</field></record>
+    <record id="nur_kunst" model="cb.nur.code"><field name="code">640</field><field name="name">Kunst en cultuur</field></record>
+    <record id="nur_muziek" model="cb.nur.code"><field name="code">663</field><field name="name">Muziek</field></record>
 
     <!-- Kinderboeken -->
     <record id="nur_900" model="cb.nur.code"><field name="code">900</field><field name="name">Kinderboeken (algemeen)</field></record>
