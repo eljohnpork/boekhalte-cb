@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_cb_import_wizard_form" model="ir.ui.view">
+        <field name="name">cb.import.wizard.form</field>
+        <field name="model">cb.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="CB Import Wizard">
+                <group attrs="{'invisible': [('state', '!=', 'draft')]}">
+                    <field name="config_id"/>
+                    <field name="import_type"/>
+                    <field name="nur_filter" placeholder="bijv. 301,302,340 (leeg = alles)"/>
+                    <field name="only_new"/>
+                </group>
+
+                <div attrs="{'invisible': [('state', '!=', 'done')]}"
+                     class="alert alert-info" role="alert">
+                    <field name="result_message" readonly="1"/>
+                </div>
+
+                <footer>
+                    <button name="action_import" string="Start Import" type="object"
+                            class="btn-primary"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="action_view_log" string="Bekijk Log" type="object"
+                            class="btn-secondary"
+                            attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                    <button string="Sluiten" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cb_import_wizard" model="ir.actions.act_window">
+        <field name="name">CB Importeren</field>
+        <field name="res_model">cb.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_cb_import_wizard"
+              name="Importeer Nu"
+              parent="boekhalte_cb.menu_cb_sync"
+              action="action_cb_import_wizard"
+              sequence="5"/>
+</odoo>

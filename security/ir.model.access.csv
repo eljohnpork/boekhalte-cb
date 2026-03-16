@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cb_config_manager,cb.config manager,model_cb_config,base.group_system,1,1,1,1
+access_cb_config_user,cb.config user,model_cb_config,base.group_user,1,0,0,0
+access_cb_import_log_manager,cb.import.log manager,model_cb_import_log,base.group_system,1,1,1,1
+access_cb_import_log_user,cb.import.log user,model_cb_import_log,base.group_user,1,0,0,0
+access_cb_import_log_line,cb.import.log.line,model_cb_import_log_line,base.group_user,1,1,1,1
+access_cb_nur_code,cb.nur.code,model_cb_nur_code,base.group_user,1,0,0,0
+access_cb_nur_code_manager,cb.nur.code manager,model_cb_nur_code,base.group_system,1,1,1,1
+access_cb_import_wizard,cb.import.wizard,model_cb_import_wizard,base.group_user,1,1,1,1

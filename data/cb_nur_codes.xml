@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Meest gebruikte NUR-codes De Boekhalte CB -->
+
+    <!-- Fictie -->
+    <record id="nur_301" model="cb.nur.code"><field name="code">301</field><field name="name">Romans en verhalen (algemeen)</field></record>
+    <record id="nur_302" model="cb.nur.code"><field name="code">302</field><field name="name">Historische romans</field></record>
+    <record id="nur_303" model="cb.nur.code"><field name="code">303</field><field name="name">Romantische romans</field></record>
+    <record id="nur_304" model="cb.nur.code"><field name="code">304</field><field name="name">Spanning / thriller</field></record>
+    <record id="nur_305" model="cb.nur.code"><field name="code">305</field><field name="name">Detectives</field></record>
+    <record id="nur_306" model="cb.nur.code"><field name="code">306</field><field name="name">Sciencefiction</field></record>
+    <record id="nur_334" model="cb.nur.code"><field name="code">334</field><field name="name">Fantasy</field></record>
+    <record id="nur_340" model="cb.nur.code"><field name="code">340</field><field name="name">Literaire romans en verhalen</field></record>
+    <record id="nur_370" model="cb.nur.code"><field name="code">370</field><field name="name">Humor</field></record>
+
+    <!-- Non-fictie -->
+    <record id="nur_400" model="cb.nur.code"><field name="code">400</field><field name="name">Non-fictie (algemeen)</field></record>
+    <record id="nur_402" model="cb.nur.code"><field name="code">402</field><field name="name">Biografie en autobiografie</field></record>
+    <record id="nur_450" model="cb.nur.code"><field name="code">450</field><field name="name">Geschiedenis</field></record>
+    <record id="nur_460" model="cb.nur.code"><field name="code">460</field><field name="name">Politiek</field></record>
+    <record id="nur_470" model="cb.nur.code"><field name="code">470</field><field name="name">Psychologie</field></record>
+    <record id="nur_480" model="cb.nur.code"><field name="code">480</field><field name="name">Filosofie</field></record>
+    <record id="nur_500" model="cb.nur.code"><field name="code">500</field><field name="name">Religie en spiritualiteit</field></record>
+    <record id="nur_600" model="cb.nur.code"><field name="code">600</field><field name="name">Wetenschap</field></record>
+    <record id="nur_650" model="cb.nur.code"><field name="code">650</field><field name="name">Natuur</field></record>
+
+    <!-- Zakelijk / professioneel -->
+    <record id="nur_800" model="cb.nur.code"><field name="code">800</field><field name="name">Economie en bedrijfskunde</field></record>
+    <record id="nur_801" model="cb.nur.code"><field name="code">801</field><field name="name">Management</field></record>
+    <record id="nur_820" model="cb.nur.code"><field name="code">820</field><field name="name">Informatica</field></record>
+    <record id="nur_830" model="cb.nur.code"><field name="code">830</field><field name="name">Recht</field></record>
+
+    <!-- Lifestyle -->
+    <record id="nur_440" model="cb.nur.code"><field name="code">440</field><field name="name">Kookboeken</field></record>
+    <record id="nur_450_sport" model="cb.nur.code"><field name="code">481</field><field name="name">Sport</field></record>
+    <record id="nur_450_reizen" model="cb.nur.code"><field name="code">500</field><field name="name">Reizen</field></record>
+    <record id="nur_450_kunst" model="cb.nur.code"><field name="code">640</field><field name="name">Kunst en cultuur</field></record>
+    <record id="nur_450_muziek" model="cb.nur.code"><field name="code">663</field><field name="name">Muziek</field></record>
+
+    <!-- Kinderboeken -->
+    <record id="nur_900" model="cb.nur.code"><field name="code">900</field><field name="name">Kinderboeken (algemeen)</field></record>
+    <record id="nur_901" model="cb.nur.code"><field name="code">901</field><field name="name">Prentenboeken</field></record>
+    <record id="nur_908" model="cb.nur.code"><field name="code">908</field><field name="name">Kinderboeken 6-9 jaar</field></record>
+    <record id="nur_910" model="cb.nur.code"><field name="code">910</field><field name="name">Kinderboeken 9-12 jaar</field></record>
+    <record id="nur_914" model="cb.nur.code"><field name="code">914</field><field name="name">Jeugdboeken 12+</field></record>
+
+    <!-- Onderwijs -->
+    <record id="nur_260" model="cb.nur.code"><field name="code">260</field><field name="name">Studieboeken</field></record>
+    <record id="nur_270" model="cb.nur.code"><field name="code">270</field><field name="name">Schoolboeken</field></record>
+</odoo>

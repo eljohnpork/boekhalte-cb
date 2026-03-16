@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_cb_import_log_tree" model="ir.ui.view">
+        <field name="name">cb.import.log.tree</field>
+        <field name="model">cb.import.log</field>
+        <field name="arch" type="xml">
+            <tree string="Import Logs" decoration-danger="state=='error'"
+                  decoration-warning="errors > 0" decoration-success="state=='done' and errors==0">
+                <field name="create_date" string="Datum"/>
+                <field name="config_id"/>
+                <field name="sync_type"/>
+                <field name="state"/>
+                <field name="products_created"/>
+                <field name="products_updated"/>
+                <field name="errors"/>
+                <field name="message"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cb_import_log_form" model="ir.ui.view">
+        <field name="name">cb.import.log.form</field>
+        <field name="model">cb.import.log</field>
+        <field name="arch" type="xml">
+            <form string="Import Log" create="false" edit="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="config_id"/>
+                            <field name="sync_type"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="products_created"/>
+                            <field name="products_updated"/>
+                            <field name="errors"/>
+                        </group>
+                    </group>
+                    <field name="message"/>
+                    <field name="log_lines">
+                        <tree decoration-danger="level=='error'" decoration-warning="level=='warning'">
+                            <field name="level"/>
+                            <field name="isbn"/>
+                            <field name="message"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cb_import_log" model="ir.actions.act_window">
+        <field name="name">Import Logs</field>
+        <field name="res_model">cb.import.log</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'create': False}</field>
+    </record>
+</odoo>
