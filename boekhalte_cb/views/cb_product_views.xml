@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Extra tab op product formulier -->
     <record id="view_product_template_cb_form" model="ir.ui.view">
         <field name="name">product.template.cb.form</field>
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="cb_is_book" invisible="1"/>
+            </field>
             <notebook position="inside">
-                <page string="De Boekhalte CB" name="cb_info"
-                      attrs="{'invisible': [('cb_is_book', '=', False)]}">
+                <page string="De Boekhalte CB" name="cb_info" invisible="not cb_is_book">
                     <group>
                         <group string="Boekinformatie">
                             <field name="cb_isbn"/>
@@ -26,21 +27,18 @@
         </field>
     </record>
 
-    <!-- CB boeken filter in productoverzicht -->
     <record id="view_product_template_cb_search" model="ir.ui.view">
         <field name="name">product.template.cb.search</field>
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_search_view"/>
         <field name="arch" type="xml">
-            <filter name="filter_available" position="after">
-                <separator/>
-                <filter string="CB Boeken" name="cb_books"
-                        domain="[('cb_is_book', '=', True)]"/>
-            </filter>
-            <group position="inside">
-                <filter string="NUR Code" name="group_nur" context="{'group_by': 'cb_nur_name'}"/>
-                <filter string="Uitgever" name="group_publisher" context="{'group_by': 'cb_publisher'}"/>
-            </group>
+            <search position="inside">
+                <filter string="CB Boeken" name="cb_books" domain="[('cb_is_book', '=', True)]"/>
+                <group expand="0" string="Groepeer op">
+                    <filter string="NUR Code" name="group_nur" context="{'group_by': 'cb_nur_name'}"/>
+                    <filter string="Uitgever" name="group_publisher" context="{'group_by': 'cb_publisher'}"/>
+                </group>
+            </search>
         </field>
     </record>
 </odoo>

@@ -6,18 +6,14 @@
         <field name="arch" type="xml">
             <form string="De Boekhalte CB Configuratie">
                 <header>
-                    <button name="action_test_ftp_connection" string="Test FTP Verbinding"
-                            type="object" class="btn-secondary"/>
-                    <button name="action_run_full_sync" string="Volledige Sync Nu"
-                            type="object" class="btn-primary"/>
-                    <button name="action_run_stock_sync" string="Alleen Voorraad Sync"
-                            type="object" class="btn-secondary"/>
+                    <button name="action_test_ftp_connection" string="Test FTP Verbinding" type="object" class="btn-secondary"/>
+                    <button name="action_run_full_sync" string="Volledige Sync Nu" type="object" class="btn-primary"/>
+                    <button name="action_run_stock_sync" string="Alleen Voorraad Sync" type="object" class="btn-secondary"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
                         <h1><field name="name" placeholder="Naam configuratie"/></h1>
                     </div>
-
                     <group>
                         <group string="Sync Status">
                             <field name="last_catalog_sync"/>
@@ -31,21 +27,17 @@
                             <field name="last_sync_errors"/>
                         </group>
                     </group>
-
                     <notebook>
                         <page string="FTP Instellingen" name="ftp">
                             <group>
-                                <group string="Verbinding">
-                                    <field name="ftp_host"/>
-                                    <field name="ftp_port"/>
-                                    <field name="ftp_user"/>
-                                    <field name="ftp_password" password="True"/>
-                                    <field name="ftp_use_tls"/>
-                                    <field name="ftp_base_path"/>
-                                </group>
+                                <field name="ftp_host"/>
+                                <field name="ftp_port"/>
+                                <field name="ftp_user"/>
+                                <field name="ftp_password" password="True"/>
+                                <field name="ftp_use_tls"/>
+                                <field name="ftp_base_path"/>
                             </group>
                         </page>
-
                         <page string="Actieve Feeds" name="feeds">
                             <group>
                                 <group string="Catalogus (ONIX)">
@@ -70,19 +62,13 @@
                                 </group>
                             </group>
                         </page>
-
                         <page string="Import Instellingen" name="import">
                             <group>
-                                <group string="Producten">
-                                    <field name="default_supplier_id"/>
-                                    <field name="default_product_categ_id"/>
-                                    <field name="create_missing_categories"/>
-                                    <field name="update_existing_products"/>
-                                    <field name="import_cover_images"/>
-                                </group>
-                                <group string="Voorraad">
-                                    <field name="stock_location_id"/>
-                                </group>
+                                <field name="default_supplier_id"/>
+                                <field name="default_product_categ_id"/>
+                                <field name="create_missing_categories"/>
+                                <field name="update_existing_products"/>
+                                <field name="import_cover_images"/>
                             </group>
                         </page>
                     </notebook>
@@ -132,30 +118,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_cb_root"
-              name="De Boekhalte CB"
-              sequence="90"/>
-
-    <menuitem id="menu_cb_sync"
-              name="Synchronisatie"
-              parent="menu_cb_root"
-              sequence="10"/>
-
-    <menuitem id="menu_cb_config"
-              name="Configuratie"
-              parent="menu_cb_sync"
-              action="action_cb_config"
-              sequence="10"/>
-
-    <menuitem id="menu_cb_logs"
-              name="Import Logs"
-              parent="menu_cb_sync"
-              action="action_cb_import_log"
-              sequence="20"/>
-
-    <menuitem id="menu_cb_nur"
-              name="NUR Codes"
-              parent="menu_cb_root"
-              action="action_cb_nur_code"
-              sequence="30"/>
+    <menuitem id="menu_cb_root" name="De Boekhalte CB" sequence="90"/>
+    <menuitem id="menu_cb_sync" name="Synchronisatie" parent="menu_cb_root" sequence="10"/>
+    <menuitem id="menu_cb_config" name="Configuratie" parent="menu_cb_sync" action="action_cb_config" sequence="10"/>
+    <menuitem id="menu_cb_nur" name="NUR Codes" parent="menu_cb_root" action="action_cb_nur_code" sequence="30"/>
 </odoo>

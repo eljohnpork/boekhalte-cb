@@ -5,25 +5,21 @@
         <field name="model">cb.import.wizard</field>
         <field name="arch" type="xml">
             <form string="CB Import Wizard">
-                <group attrs="{'invisible': [('state', '!=', 'draft')]}">
+                <field name="state" invisible="1"/>
+                <group invisible="state != 'draft'">
                     <field name="config_id"/>
                     <field name="import_type"/>
                     <field name="nur_filter" placeholder="bijv. 301,302,340 (leeg = alles)"/>
                     <field name="only_new"/>
                 </group>
-
-                <div attrs="{'invisible': [('state', '!=', 'done')]}"
-                     class="alert alert-info" role="alert">
+                <div invisible="state != 'done'" class="alert alert-info" role="alert">
                     <field name="result_message" readonly="1"/>
                 </div>
-
                 <footer>
                     <button name="action_import" string="Start Import" type="object"
-                            class="btn-primary"
-                            attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                            class="btn-primary" invisible="state != 'draft'"/>
                     <button name="action_view_log" string="Bekijk Log" type="object"
-                            class="btn-secondary"
-                            attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                            class="btn-secondary" invisible="state != 'done'"/>
                     <button string="Sluiten" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>

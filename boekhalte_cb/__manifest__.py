@@ -28,7 +28,6 @@
         'views/cb_config_views.xml',
         'views/cb_import_log_views.xml',
         'views/cb_product_views.xml',
-        'views/res_config_settings_views.xml',
         'wizard/cb_import_wizard_views.xml',
     ],
     'assets': {

@@ -55,4 +55,5 @@
         <field name="view_mode">tree,form</field>
         <field name="context">{'create': False}</field>
     </record>
+    <menuitem id="menu_cb_logs" name="Import Logs" parent="boekhalte_cb.menu_cb_sync" action="action_cb_import_log" sequence="20"/>
 </odoo>
